@@ -331,6 +331,10 @@ h6 { font-size: 16px; }
     overflow: hidden;
 }
 
+.fab, .fas {
+    color: var(--mainText);
+}
+
 #hobbies-pic {
     display: block;
     margin: 0 auto;
