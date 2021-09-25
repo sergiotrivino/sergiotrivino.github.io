@@ -353,6 +353,14 @@ h6 { font-size: 16px; }
     height: auto;
 }
 
+.vet {
+    width: 60%;
+    height: auto;
+    margin-left:auto;
+    margin-right: auto;
+
+}
+
 .post-preview {
     background-color: #fff;
     padding: 15px;
