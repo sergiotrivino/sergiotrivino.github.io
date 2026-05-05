@@ -1,421 +1,2314 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" type = "text/css" href="./resources/css/styles.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sergio Triviño Ortega — Biomedical Engineer</title>
+<meta name="description" content="Biomedical Engineer specialized in pediatric assistive robotics, medical device R&D, and embedded systems." />
 
-    <link id="theme-style" rel="stylesheet" type="text/css" href="">
+<meta property="og:title" content="Sergio Triviño Ortega — Biomedical Engineer" />
+<meta property="og:description" content="Pediatric assistive robotics · Medical device R&D · Embedded systems." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://sergiotrivino.github.io/" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!---->
-    
-    <script src="https://kit.fontawesome.com/a5e80b7fad.js" crossorigin="anonymous"></script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23FAFAF7'/%3E%3Ctext x='50' y='72' font-family='Inter,sans-serif' font-size='80' font-weight='700' text-anchor='middle' fill='%23111111'%3ES%3C/text%3E%3C/svg%3E" />
 
-    <title>Hi, I'm Sergio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<!-- =====================================================
+     CONFIGURACIÓN DEL FORMULARIO DE GOOGLE FORMS
+     =====================================================
+     Reemplaza los IDs siguientes con los de TU Google Form.
+     Las instrucciones para obtenerlos están en SETUP.md
+     ===================================================== -->
+<script>
+  window.GFORM_CONFIG = {
+    // El "form ID" del URL: docs.google.com/forms/d/e/FORM_ID/formResponse
+    formId: "1FAIpQLSeUPImCVK6qhcJ25LYQyO4uPoItiih1AA-B5sg73htNjAnJwQ",
+    // IDs de cada campo del form (entry.XXXXXXXXX)
+    fields: {
+      name:    "entry.908904742",
+      email:   "entry.273068794",
+      company: "entry.198479231",
+      role:    "entry.1374015779",
+      reason:  "entry.35999876",
+      linkedin:"entry.1662729470"
+    }
+  };
+</script>
+
+<style>
+:root {
+  --bg: #FAFAF7;
+  --bg-2: #F0EFEA;
+  --ink: #0E0E0C;
+  --ink-soft: #2A2A28;
+  --ink-muted: #6B6A66;
+  --line: #DCDAD2;
+  --line-soft: #EAE8E0;
+  --accent: #FF4D2E;
+  --error: #C7321F;
+  --success: #1F7A3F;
+
+  --font-display: 'Inter Tight', 'Inter', sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --max: 1320px;
+  --gutter: clamp(1.5rem, 5vw, 4rem);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html.modal-open { overflow: hidden; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.55;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  font-feature-settings: 'ss01', 'cv11';
+}
+
+::selection { background: var(--accent); color: var(--bg); }
+main, header, footer, nav { position: relative; }
+
+/* ==================== NAV ==================== */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1.25rem var(--gutter);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(250,250,247,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+nav.scrolled { border-bottom-color: var(--line-soft); }
+
+.brand {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-dot {
+  width: 8px; height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.nav-right { display: flex; align-items: center; gap: 2.25rem; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+
+.nav-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--accent); }
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.lang-toggle button {
+  background: none; border: none; cursor: pointer;
+  padding: 0; color: var(--ink-muted);
+  font-family: inherit; font-size: inherit; font-weight: inherit;
+  transition: color 0.2s; letter-spacing: 0.05em;
+}
+.lang-toggle button.active { color: var(--ink); }
+.lang-toggle .sep { color: var(--line); }
+
+@media (max-width: 760px) { .nav-links { display: none; } }
+
+/* ==================== HERO ==================== */
+.hero {
+  min-height: 100vh;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 11rem var(--gutter) 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--ink-muted);
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.01em;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.1s forwards;
+}
+
+.eyebrow-dot {
+  width: 6px; height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2.4s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,77,46,0.5); }
+  50% { box-shadow: 0 0 0 6px rgba(255,77,46,0); }
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 9.5vw, 9rem);
+  font-weight: 700;
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+  margin-bottom: 3rem;
+  max-width: 1280px;
+  opacity: 0;
+  animation: fadeUp 1s 0.25s forwards;
+}
+
+.hero h1 .accent-mark { color: var(--accent); font-weight: 700; }
+.hero h1 .light { font-weight: 300; font-style: italic; }
+
+.hero-meta-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--ink);
+  opacity: 0;
+  animation: fadeUp 1s 0.5s forwards;
+  align-items: start;
+}
+
+.hero-meta-block .label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  display: block;
+}
+
+.hero-meta-block .value {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.015em;
+  line-height: 1.4;
+}
+
+.hero-meta-block .value.large {
+  font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+  line-height: 1.35;
+  max-width: 540px;
+}
+
+@media (max-width: 760px) { .hero-meta-row { grid-template-columns: 1fr; gap: 2rem; } }
+
+.hero-cta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  opacity: 0;
+  animation: fadeUp 1s 0.7s forwards;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.95rem 1.6rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  background: none;
+  color: inherit;
+}
+
+.btn-primary { background: var(--ink); color: var(--bg); }
+.btn-primary:hover { background: var(--accent); transform: translateY(-2px); }
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--line);
+  color: var(--ink);
+}
+.btn-ghost:hover {
+  border-color: var(--ink);
+  background: var(--ink); color: var(--bg);
+  transform: translateY(-2px);
+}
+
+.btn .arrow { transition: transform 0.2s; font-size: 1em; }
+.btn:hover .arrow { transform: translate(2px, -2px); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==================== SECTIONS ==================== */
+section {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 7rem var(--gutter);
+}
+
+.section-header {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  align-items: baseline;
+}
+
+.section-num {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+.section-num span { color: var(--accent); }
+
+h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  max-width: 1100px;
+}
+
+h2 .light { font-weight: 300; color: var(--ink-muted); }
+h2 .accent { color: var(--accent); }
+
+@media (max-width: 700px) { .section-header { grid-template-columns: 1fr; gap: 0.5rem; } }
+
+/* ==================== ABOUT ==================== */
+.about-layout {
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr;
+  gap: 2rem 3rem;
+  align-items: start;
+}
+
+.about-text p {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.015em;
+  max-width: 640px;
+}
+.about-text p:last-child { margin-bottom: 0; }
+.about-text strong { font-weight: 600; color: var(--ink); }
+
+/* ==================== PHOTO PLACEHOLDER (about + others) ==================== */
+.photo-frame {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  text-align: center;
+  padding: 1rem;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-frame.has-image .photo-placeholder { display: none; }
+
+.photo-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0.65;
+}
+.photo-placeholder svg { opacity: 0.5; }
+.photo-placeholder strong {
+  font-weight: 600; color: var(--ink-soft);
+  letter-spacing: 0.05em; text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+.about-pillars {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-top: 1px solid var(--ink);
+}
+
+.pillar {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1.5rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--line);
+  align-items: baseline;
+}
+.pillar:last-child { border-bottom: none; }
+
+.pillar-num { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); font-weight: 500; }
+
+.pillar-content h4 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin-bottom: 0.4rem;
+}
+
+.pillar-content p {
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+  max-width: 380px;
+}
+
+@media (max-width: 900px) {
+  .about-layout { grid-template-columns: 1fr; gap: 3rem; }
+}
+
+/* ==================== METRIC STRIP ==================== */
+.metric-strip {
+  margin-top: 5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--ink);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.metric-cell .num {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin-bottom: 0.6rem;
+  color: var(--ink);
+}
+
+.metric-cell .num .unit {
+  color: var(--ink-muted);
+  font-weight: 400;
+  font-size: 0.55em;
+  letter-spacing: -0.02em;
+}
+
+.metric-cell .label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+@media (max-width: 760px) { .metric-strip { grid-template-columns: repeat(2, 1fr); } }
+
+/* ==================== FEATURED PROJECT ==================== */
+.featured-project {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.featured-card {
+  background: var(--ink);
+  color: var(--bg);
+  padding: clamp(2rem, 4vw, 4rem);
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-card::before {
+  content: '';
+  position: absolute;
+  top: -30%; right: -10%;
+  width: 50%; height: 130%;
+  background: radial-gradient(ellipse at top right, rgba(255,77,46,0.18) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.featured-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--bg);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.featured-tag .dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+
+.featured-card h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 4.5vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin-bottom: 1.75rem;
+  max-width: 900px;
+  position: relative;
+}
+
+.featured-card h3 .accent { color: var(--accent); }
+.featured-card h3 .light { font-weight: 300; color: rgba(250,250,247,0.7); font-style: italic; }
+
+.featured-desc {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  color: rgba(250,250,247,0.78);
+  max-width: 720px;
+  margin-bottom: 2.5rem;
+  line-height: 1.55;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  position: relative;
+}
+
+/* Featured project image gallery placeholders */
+.featured-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.featured-gallery .photo-frame {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(250,250,247,0.45);
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+}
+.featured-gallery .photo-placeholder strong { color: rgba(250,250,247,0.7); }
+.featured-gallery .photo-placeholder svg path { stroke: rgba(250,250,247,0.4); }
+
+@media (max-width: 600px) {
+  .featured-gallery { grid-template-columns: 1fr 1fr; }
+}
+
+.featured-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(250,250,247,0.15);
+  position: relative;
+}
+
+.feat-metric .num {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  color: var(--bg);
+}
+
+.feat-metric .num .unit { color: rgba(250,250,247,0.55); font-weight: 400; font-size: 0.55em; }
+
+.feat-metric .label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(250,250,247,0.5);
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .featured-project { grid-template-columns: 1fr; gap: 1.5rem; }
+  .featured-metrics { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+}
+
+/* ==================== PROJECTS GRID ==================== */
+.projects-layout {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.projects-list { display: flex; flex-direction: column; }
+
+.project-row {
+  display: grid;
+  grid-template-columns: 70px 1fr 280px;
+  gap: 2rem;
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--line);
+  align-items: start;
+  cursor: default;
+  transition: padding 0.3s ease;
+  position: relative;
+}
+
+.project-row::before {
+  content: '';
+  position: absolute;
+  left: 0; top: -1px;
+  width: 0; height: 1px;
+  background: var(--accent);
+  transition: width 0.4s ease;
+}
+
+.project-row:hover::before { width: 100%; }
+.project-row:first-child { border-top: 1px solid var(--ink); }
+.project-row:last-child { border-bottom: 1px solid var(--ink); }
+
+.proj-num {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  font-weight: 500;
+  padding-top: 0.5rem;
+}
+
+.proj-body h4 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.75rem;
+}
+
+.proj-body p {
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  line-height: 1.6;
+  max-width: 580px;
+}
+
+.proj-side { display: flex; flex-direction: column; gap: 1rem; padding-top: 0.5rem; }
+
+.proj-side-meta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+.tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 0.3rem 0.6rem;
+  background: var(--bg-2);
+  color: var(--ink-soft);
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .projects-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .project-row { grid-template-columns: 1fr; gap: 1rem; }
+  .proj-side { padding-top: 0; }
+}
+
+/* ==================== EXPERIENCE TIMELINE ==================== */
+.timeline {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.timeline-list { display: flex; flex-direction: column; }
+
+.exp-row {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 3rem;
+  padding: 2.25rem 0;
+  border-top: 1px solid var(--line);
+  align-items: start;
+}
+
+.exp-row:first-child { border-top: 1px solid var(--ink); }
+.exp-row:last-child { border-bottom: 1px solid var(--ink); }
+
+.exp-when {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  padding-top: 0.4rem;
+}
+
+.exp-when .now {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 0.1rem 0.45rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin-left: 0.3rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  vertical-align: 0.1em;
+}
+
+.exp-card h4 {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 0.4rem;
+}
+
+.exp-org {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+
+.exp-card p {
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  line-height: 1.6;
+  max-width: 720px;
+}
+
+@media (max-width: 900px) {
+  .timeline { grid-template-columns: 1fr; gap: 2rem; }
+  .exp-row { grid-template-columns: 1fr; gap: 0.75rem; }
+}
+
+/* ==================== PRESS ==================== */
+.press-layout {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.press-list { display: flex; flex-direction: column; }
+
+.press-row {
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--line);
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.press-row::before {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  background: var(--ink);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+  z-index: -1;
+}
+
+.press-row:hover::before { transform: scaleY(1); transform-origin: top; }
+.press-row:hover { color: var(--bg); padding-left: 1.5rem; padding-right: 1.5rem; }
+.press-row:hover .press-num { color: var(--accent); }
+.press-row:hover .press-meta { color: rgba(250,250,247,0.6); }
+.press-row:hover .press-cta { color: var(--accent); }
+
+.press-row:first-child { border-top: 1px solid var(--ink); }
+.press-row:last-child { border-bottom: 1px solid var(--ink); }
+
+.press-num {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.press-body { min-width: 0; }
+
+.press-outlet {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  margin-bottom: 0.4rem;
+}
+
+.press-quote {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  max-width: 700px;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+  transition: color 0.3s;
+}
+
+.press-row:hover .press-quote { color: rgba(250,250,247,0.85); }
+
+.press-meta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.press-cta {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink);
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+  transition: color 0.3s;
+}
+
+@media (max-width: 900px) {
+  .press-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .press-row { grid-template-columns: 50px 1fr; gap: 1rem; }
+  .press-cta { grid-column: 2; padding-top: 0.5rem; }
+}
+
+/* ==================== SKILLS ==================== */
+.skills-layout {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--ink);
+}
+
+.skill-cell {
+  padding: 2rem;
+  border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+}
+
+.skill-cell:nth-child(3n) { border-right: none; }
+.skill-cell:nth-last-child(-n+3) { border-bottom: 1px solid var(--ink); }
+
+.skill-cell h4 {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.skill-cell p {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--ink);
+  line-height: 1.45;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+.skill-cell p .muted { color: var(--ink-muted); font-weight: 400; }
+
+@media (max-width: 800px) {
+  .skills-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .skill-cell { border-right: none !important; }
+  .skill-cell:nth-last-child(-n+3) { border-bottom: 1px solid var(--line); }
+  .skill-cell:last-child { border-bottom: 1px solid var(--ink); }
+}
+
+/* ==================== EDUCATION + CERTS ==================== */
+.formation-layout {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.formation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.formation-block h3 {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--ink);
+  font-weight: 600;
+}
+
+.form-item {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.form-item:last-child { border-bottom: none; }
+
+.form-item h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin-bottom: 0.3rem;
+}
+
+.form-item p {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+}
+
+@media (max-width: 800px) {
+  .formation-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .formation-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* ==================== CONTACT ==================== */
+.contact-section {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 8rem var(--gutter);
+  position: relative;
+}
+
+.contact-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--ink-muted);
+  margin-bottom: 2rem;
+}
+
+.contact-eyebrow .dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+
+.contact-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 7vw, 6rem);
+  font-weight: 700;
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+  margin-bottom: 3rem;
+  max-width: 1100px;
+}
+
+.contact-heading .accent { color: var(--accent); }
+.contact-heading .light { font-weight: 300; color: var(--ink-muted); font-style: italic; }
+
+.contact-email-wrapper { display: inline-block; position: relative; margin-bottom: 4rem; }
+
+.contact-email {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.025em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: color 0.2s;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 0.4rem;
+}
+
+.contact-email:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--ink);
+}
+
+.contact-cell .label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  margin-bottom: 0.6rem;
+  font-weight: 500;
+  display: block;
+}
+
+.contact-cell a, .contact-cell .value, .contact-cell button.linklike {
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 1.3vw, 1.15rem);
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.015em;
+  transition: color 0.2s;
+  background: none; border: none; padding: 0; cursor: pointer;
+}
+
+.contact-cell a:hover, .contact-cell button.linklike:hover { color: var(--accent); }
+
+@media (max-width: 760px) { .contact-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; } }
+
+/* ==================== FOOTER ==================== */
+footer {
+  padding: 2.5rem var(--gutter);
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  max-width: var(--max);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer a, footer button.linklike {
+  color: var(--accent);
+  text-decoration: none;
+  background: none; border: none; padding: 0; cursor: pointer;
+  font-family: inherit; font-size: inherit; font-weight: inherit; letter-spacing: inherit;
+}
+
+/* ==================== REVEAL ==================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.65, 0, 0.35, 1), transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==================== MODAL — SOLICITAR CV ==================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(14, 14, 12, 0.65);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.visible { display: flex; opacity: 1; }
+
+.modal {
+  background: var(--bg);
+  width: 100%;
+  max-width: 580px;
+  max-height: 92vh;
+  overflow-y: auto;
+  border-radius: 18px;
+  padding: 2.5rem;
+  position: relative;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modal-overlay.visible .modal { transform: translateY(0) scale(1); }
+
+.modal-close {
+  position: absolute;
+  top: 1.25rem; right: 1.25rem;
+  width: 36px; height: 36px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  color: var(--ink-soft);
+  transition: all 0.2s;
+  font-family: var(--font-mono);
+}
+
+.modal-close:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+.modal-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.modal-eyebrow .dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+
+.modal h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.75rem;
+}
+
+.modal-intro {
+  font-size: 0.93rem;
+  color: var(--ink-muted);
+  line-height: 1.55;
+  margin-bottom: 2rem;
+  max-width: 480px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+}
+
+.field-group label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  margin-bottom: 0.45rem;
+  font-weight: 600;
+}
+
+.field-group label .req { color: var(--accent); margin-left: 0.15rem; }
+.field-group label .opt {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--ink-muted);
+  text-transform: lowercase;
+  margin-left: 0.4rem;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.field-group input,
+.field-group textarea {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  background: var(--bg-2);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.75rem 0.9rem;
+  transition: all 0.2s;
+  outline: none;
+  width: 100%;
+  font-weight: 400;
+}
+
+.field-group input:focus,
+.field-group textarea:focus {
+  border-color: var(--ink);
+  background: var(--bg);
+}
+
+.field-group textarea { resize: vertical; min-height: 90px; line-height: 1.5; }
+
+.field-group .hint {
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  margin-top: 0.4rem;
+  line-height: 1.4;
+}
+
+.field-group .err {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--error);
+  margin-top: 0.35rem;
+  display: none;
+  font-weight: 500;
+}
+
+.field-group.invalid input,
+.field-group.invalid textarea {
+  border-color: var(--error);
+  background: rgba(199,50,31,0.04);
+}
+
+.field-group.invalid .err { display: block; }
+
+/* honeypot - hidden anti-spam field */
+.honeypot {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.modal-disclaimer {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  line-height: 1.45;
+  flex-grow: 1;
+  max-width: 280px;
+}
+
+.btn-submit {
+  background: var(--ink);
+  color: var(--bg);
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  border: none;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: -0.005em;
+}
+
+.btn-submit:hover:not(:disabled) { background: var(--accent); transform: translateY(-1px); }
+.btn-submit:disabled { opacity: 0.6; cursor: wait; }
+
+.spinner {
+  display: none;
+  width: 14px; height: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: var(--bg);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.btn-submit.loading .spinner { display: inline-block; }
+.btn-submit.loading .arrow { display: none; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Success state */
+.modal-success {
+  text-align: center;
+  padding: 2rem 1rem 0;
+  display: none;
+}
+
+.modal.is-success .modal-form { display: none; }
+.modal.is-success .modal-success { display: block; }
+.modal.is-success .modal-eyebrow,
+.modal.is-success > h3:not(.success-title),
+.modal.is-success > .modal-intro { display: none; }
+
+.success-icon {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: var(--success);
+  color: var(--bg);
+  display: grid;
+  place-items: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.success-title {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.85rem;
+  line-height: 1.15;
+}
+
+.modal-success p {
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  max-width: 420px;
+  margin: 0 auto 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .modal { padding: 1.75rem 1.5rem; max-height: 95vh; }
+  .modal-footer { flex-direction: column; align-items: stretch; }
+  .modal-disclaimer { max-width: 100%; }
+  .btn-submit { width: 100%; justify-content: center; }
+}
+
+/* Language */
+html[lang="en"] .lang-es { display: none; }
+html:not([lang="en"]) .lang-en { display: none; }
+</style>
 </head>
 <body>
-    <main>
-        <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-alt-circle-up fa-2x"></i></button>
-        <section class = "s1">
-            <div class = main-container>
-                <div class="greeting-wrapper">
-                    <h1>Hi, I'm Sergio Triviño</h1>
-                </div>
-                <div class="intro-wrapper">
-                    
-                    <div class="nav-wrapper">
-                        <div class="dots-wrapper">
-                            <div id="dot-1" class="browser-dot">
 
-                            </div>
-                            <div id="dot-2" class="browser-dot">
+<!-- ============ NAV ============ -->
+<nav id="nav">
+  <a href="#top" class="brand">
+    <span class="brand-dot"></span>
+    Sergio Triviño
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#about" data-es="Sobre" data-en="About">Sobre</a></li>
+      <li><a href="#work" data-es="Trabajo" data-en="Work">Trabajo</a></li>
+      <li><a href="#press" data-es="Prensa" data-en="Press">Prensa</a></li>
+      <li><a href="#contact" data-es="Contacto" data-en="Contact">Contacto</a></li>
+    </ul>
+    <div class="lang-toggle">
+      <button id="btn-es" class="active" onclick="setLang('es')">ES</button>
+      <span class="sep">/</span>
+      <button id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</nav>
 
-                            </div>
-                            <div id="dot-3" class="browser-dot">
+<!-- ============ HERO ============ -->
+<header id="top">
+<section class="hero">
+  <div class="hero-eyebrow">
+    <span class="eyebrow-dot"></span>
+    <span data-es="Disponible para reubicación internacional"
+          data-en="Open to international relocation">Disponible para reubicación internacional</span>
+    <span style="color:var(--line)">·</span>
+    <span>Zipaquirá, CO</span>
+  </div>
 
-                            </div>
-                        </div>
+  <h1>
+    <span data-es="Diseño dispositivos médicos" data-en="I design medical devices">Diseño dispositivos médicos</span><br />
+    <span class="light" data-es="que" data-en="that">que</span>
+    <span class="accent-mark" data-es="caminan." data-en="walk.">caminan.</span>
+  </h1>
 
-                        <nav>
+  <div class="hero-meta-row">
+    <div class="hero-meta-block">
+      <span class="label" data-es="Especialización" data-en="Specialization">Especialización</span>
+      <div class="value large"
+           data-es="Robótica asistencial pediátrica, prótesis impresas en 3D y sistemas embebidos de control de motores."
+           data-en="Pediatric assistive robotics, 3D-printed prostheses, and embedded motor control systems.">
+        Robótica asistencial pediátrica, prótesis impresas en 3D y sistemas embebidos de control de motores.
+      </div>
+    </div>
+    <div class="hero-meta-block">
+      <span class="label" data-es="Rol actual" data-en="Current role">Rol actual</span>
+      <div class="value" data-es="Ingeniero de Investigación" data-en="Research Engineer">Ingeniero de Investigación</div>
+    </div>
+    <div class="hero-meta-block">
+      <span class="label" data-es="Foco" data-en="Focus">Foco</span>
+      <div class="value" data-es="R&amp;D de dispositivos médicos" data-en="Medical device R&amp;D">R&D de dispositivos médicos</div>
+    </div>
+  </div>
 
-                            <ul id="navigation">
-                                <li class="dropdown" style="float:right;">
-                                    <a href="javascript:void(0)" class="dropbtn">Menu</a>
-                                    <div class="dropdown-content" style="right: 15px;">
-                                        <a href="#about">About me</a>
-                                        <a href="#education">Education</a>
-                                        
-                                        <a href="#projects">Projects</a>
-                                        
-                                                                                
-                                        <a href="#contact">Contact</a>
-                                    </div>
-                                </li>
-                                <li class="menu"><a href="#about">About me</a></li>
-                                <li class="pre-navi menu"><a href="#education">Education</a></li>
-                                
-                                <li class="pre-navi menu"><a href="#projects">Projects</a></li>
-                                
-                                
-                                <li class="pre-navi menu"><a href="#contact">Contact</a></li>
-                            </ul>
-                            
-                        </nav>
-                        
-                    </div>
+  <div class="hero-cta">
+    <button type="button" class="btn btn-primary" onclick="openCVModal()">
+      <span data-es="Solicitar CV" data-en="Request CV">Solicitar CV</span>
+      <span class="arrow">→</span>
+    </button>
+    <a href="#work" class="btn btn-ghost">
+      <span data-es="Ver trabajo" data-en="View work">Ver trabajo</span>
+      <span class="arrow">→</span>
+    </a>
+  </div>
+</section>
+</header>
 
-                    <div class="left-column">
-                        <img id="profile-pic" src="./resources/images/cara.jpg" alt="My face and upper body">
-                        <h5 style="text-align: center; line-height: 0;">Personalize Theme</h5>
+<main>
 
-                        <div id="theme-options-wrapper">
-                            <div data-mode="light" id="light-mode" class="theme-dot"></div>
-                            <div data-mode="blue" id="blue-mode" class="theme-dot"></div>
-                            <div data-mode="green" id="green-mode" class="theme-dot"></div>
-                            <div data-mode="purple" id="purple-mode" class="theme-dot"></div>
-                        </div>
-                        <p id="settings-note">Theme settings will be saved <br>for your next visit</p>
-                    </div>
+<!-- ============ ABOUT ============ -->
+<section id="about" class="reveal">
+  <div class="section-header">
+    <div class="section-num"><span>01</span> &nbsp; <span data-es="Sobre" data-en="About">Sobre</span></div>
+    <h2>
+      <span data-es="Ingeniería con" data-en="Engineering with">Ingeniería con</span>
+      <span class="accent" data-es="propósito clínico." data-en="clinical purpose.">propósito clínico.</span>
+    </h2>
+  </div>
 
-                    <div class="right-column">
-                        <div id="preview-shadow">
-                            <div id="preview">
-                                <div id="corner-tl" class="corner"></div>
-                                <div id="corner-tr" class="corner"></div>
+  <div class="about-layout">
+    <!-- ============================================================
+         📷 IMAGEN 1: FOTO RETRATO
+         Reemplaza el contenido del .photo-frame con:
+         <img src="img/sergio-portrait.jpg" alt="Sergio Triviño Ortega" />
+         Recomendación: 800×1000 px (vertical 4:5), JPG comprimido < 200KB
+         ============================================================ -->
+    <div class="photo-frame" id="photo-portrait">
+      <div class="photo-placeholder">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+          <path d="M12 12a4 4 0 100-8 4 4 0 000 8z" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M4 21a8 8 0 0116 0" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <strong data-es="Foto retrato" data-en="Portrait">Foto retrato</strong>
+        <span data-es="800×1000 px · vertical 4:5" data-en="800×1000 px · vertical 4:5">800×1000 px · vertical 4:5</span>
+      </div>
+    </div>
 
-                                <h3>What I do</h3>
-                                <p>I can code the website and webapp from beginning to end 
-                                    for yourself or your company so you don't have to worry on how to give
-                                    life to an idea anymore in this 
-                                    digital era!
-                                </p>
+    <div class="about-text">
+      <p data-es="Soy ingeniero biomédico con experiencia en investigación y desarrollo de dispositivos médicos: <strong>exoesqueletos modulares de miembro inferior</strong> y <strong>prótesis transtibiales pasivas</strong> para usuarios pediátricos."
+         data-en="I'm a biomedical engineer with research and development experience in medical devices: <strong>modular lower-limb exoskeletons</strong> and <strong>passive transtibial prostheses</strong> for pediatric users.">
+        Soy ingeniero biomédico con experiencia en investigación y desarrollo de dispositivos médicos: <strong>exoesqueletos modulares de miembro inferior</strong> y <strong>prótesis transtibiales pasivas</strong> para usuarios pediátricos.
+      </p>
+      <p data-es="Combino diseño mecánico, simulación FEM, control de motores sobre CAN bus y RS485, integración de sensores y biomecánica de marcha. La meta no es académica: es construir dispositivos que lleguen a las manos —o a los pies— de quienes hoy no pueden costearlos."
+         data-en="I combine mechanical design, FEM simulation, motor control over CAN bus and RS485, sensor integration and gait biomechanics. The goal isn't academic: it's to build devices that reach the hands — or the feet — of those who can't afford them today.">
+        Combino diseño mecánico, simulación FEM, control de motores sobre CAN bus y RS485, integración de sensores y biomecánica de marcha. La meta no es académica: es construir dispositivos que lleguen a las manos —o a los pies— de quienes hoy no pueden costearlos.
+      </p>
 
-                                <div id="corner-bl" class="corner"></div>
-                                <div id="corner-br" class="corner"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <div class="about-pillars" style="margin-top:2.5rem">
+        <div class="pillar">
+          <div class="pillar-num">01</div>
+          <div class="pillar-content">
+            <h4 data-es="Diseño mecánico" data-en="Mechanical design">Diseño mecánico</h4>
+            <p data-es="SolidWorks, Fusion 360, simulación FEM/FEA, manufactura aditiva con fibra de carbono continua."
+               data-en="SolidWorks, Fusion 360, FEM/FEA simulation, additive manufacturing with continuous carbon fiber.">
+              SolidWorks, Fusion 360, simulación FEM/FEA, manufactura aditiva con fibra de carbono continua.
+            </p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">02</div>
+          <div class="pillar-content">
+            <h4 data-es="Control y embebidos" data-en="Control &amp; embedded">Control y embebidos</h4>
+            <p data-es="CAN bus, RS485, FOC, PID. Integración de IMU, FSR y encoders sobre actuadores QDD."
+               data-en="CAN bus, RS485, FOC, PID. Integration of IMU, FSR and encoders on QDD actuators.">
+              CAN bus, RS485, FOC, PID. Integración de IMU, FSR y encoders sobre actuadores QDD.
+            </p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">03</div>
+          <div class="pillar-content">
+            <h4 data-es="Validación clínica" data-en="Clinical validation">Validación clínica</h4>
+            <p data-es="Ensayos mecánicos hasta falla, evaluación sobre usuario, documentación de dispositivos médicos."
+               data-en="Compression-to-failure testing, on-user evaluation, medical device documentation.">
+              Ensayos mecánicos hasta falla, evaluación sobre usuario, documentación de dispositivos médicos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        <section class="s2">
-            <div id="about" class="main-container">
+  <div class="metric-strip">
+    <div class="metric-cell">
+      <div class="num">10–20<span class="unit">×</span></div>
+      <div class="label" data-es="Reducción de costo vs. mercado" data-en="Cost reduction vs. market">Reducción de costo vs. mercado</div>
+    </div>
+    <div class="metric-cell">
+      <div class="num">&lt;1 <span class="unit" data-es="sem" data-en="wk">sem</span></div>
+      <div class="label" data-es="Tiempo de fabricación" data-en="Fabrication time">Tiempo de fabricación</div>
+    </div>
+    <div class="metric-cell">
+      <div class="num">80<span class="unit">+ kg</span></div>
+      <div class="label" data-es="Carga validada en compresión" data-en="Compression-validated load">Carga validada en compresión</div>
+    </div>
+    <div class="metric-cell">
+      <div class="num">6</div>
+      <div class="label" data-es="Medios nacionales e internacionales" data-en="National &amp; international press">Medios nacionales e internacionales</div>
+    </div>
+  </div>
+</section>
 
-                <div class="about-wrapper">
-                    <div class="about-me">
-                        <h4>More about me</h4>
+<!-- ============ FEATURED PROJECT ============ -->
+<section id="work" class="reveal">
+  <div class="section-header">
+    <div class="section-num"><span>02</span> &nbsp; <span data-es="Destacado" data-en="Featured">Destacado</span></div>
+    <h2>
+      <span data-es="Trabajo" data-en="Selected">Trabajo</span>
+      <span class="light" data-es="seleccionado." data-en="work.">seleccionado.</span>
+    </h2>
+  </div>
 
-                        <p>
-                            I am a self-taught Fullstack developer with a strong eye for innovative solutions, 
-                            interested in projects that required both conceptual and analytical thinking. 
-                            I'm always eager to learn from anyone and everyone. 
-                        </p>
+  <div class="featured-project">
+    <div></div>
+    <div class="featured-card">
+      <span class="featured-tag">
+        <span class="dot"></span>
+        <span data-es="TESIS DE PREGRADO · MARZO 2025" data-en="UNDERGRADUATE THESIS · MARCH 2025">TESIS DE PREGRADO · MARZO 2025</span>
+      </span>
+      <h3>
+        <span data-es="Una prótesis pediátrica que se" data-en="A pediatric prosthesis printed">Una prótesis pediátrica que se</span>
+        <span class="accent" data-es="imprime en un día." data-en="in a day.">imprime en un día.</span>
+        <span class="light" data-es="Y soporta más de 80 kg." data-en="And supports over 80 kg.">Y soporta más de 80 kg.</span>
+      </h3>
+      <p class="featured-desc"
+         data-es="Diseñé y fabriqué una prótesis transtibial impresa en 3D para usuarios pediátricos. Arquitectura modular intercambiable izquierda/derecha y escalable al crecimiento del usuario. Estructura en Onyx con refuerzo continuo de fibra de carbono (Markforged Mark Two), partes críticas en acero inoxidable mecanizado por CNC, y validación mediante ensayos de compresión hasta falla."
+         data-en="I designed and manufactured a 3D-printed transtibial prosthesis for pediatric users. Modular interchangeable left/right architecture, scalable as the user grows. Onyx frame with continuous carbon fiber reinforcement (Markforged Mark Two), CNC-machined stainless steel for load-critical interfaces, and validation through compression-to-failure testing.">
+        Diseñé y fabriqué una prótesis transtibial impresa en 3D para usuarios pediátricos. Arquitectura modular intercambiable izquierda/derecha y escalable al crecimiento del usuario. Estructura en Onyx con refuerzo continuo de fibra de carbono (Markforged Mark Two), partes críticas en acero inoxidable mecanizado por CNC, y validación mediante ensayos de compresión hasta falla.
+      </p>
 
-                        <p>
-                            Stands out for his adaptability towards other cultures with a solid international outlook.
-                            Passionate about learning and developing new technical skills. Curious and pragmatic, 
-                            always wants to understand how things work. Ambition in the long term is to create 
-                            the best possible experience for the user, and in the longer term, to manage larger, 
-                            cross functional IT teams.
-                        </p>
+      <!-- ============================================================
+           📷 IMÁGENES 2-4: GALERÍA DE LA PRÓTESIS (3 fotos)
+           Reemplaza el contenido de cada .photo-frame con:
+           <img src="img/prosthesis-1.jpg" alt="Vista lateral de la prótesis" />
+           Recomendación: 800×800 px (cuadradas), JPG < 200KB cada una
+           Ideas: vista completa · detalle modular · CFRP/Markforged · ensayo
+           ============================================================ -->
+      <div class="featured-gallery">
+        <div class="photo-frame">
+          <div class="photo-placeholder">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="9" cy="9" r="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M21 15l-5-5L5 21" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+            <strong data-es="Foto 1 — Prótesis" data-en="Photo 1 — Prosthesis">Foto 1 — Prótesis</strong>
+            <span data-es="Vista completa" data-en="Full view">Vista completa</span>
+          </div>
+        </div>
+        <div class="photo-frame">
+          <div class="photo-placeholder">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="9" cy="9" r="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M21 15l-5-5L5 21" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+            <strong data-es="Foto 2 — Detalle" data-en="Photo 2 — Detail">Foto 2 — Detalle</strong>
+            <span data-es="Unión modular o CFRP" data-en="Modular joint or CFRP">Unión modular o CFRP</span>
+          </div>
+        </div>
+        <div class="photo-frame">
+          <div class="photo-placeholder">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="9" cy="9" r="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M21 15l-5-5L5 21" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+            <strong data-es="Foto 3 — Validación" data-en="Photo 3 — Validation">Foto 3 — Validación</strong>
+            <span data-es="Ensayo o usuaria" data-en="Test or user">Ensayo o usuaria</span>
+          </div>
+        </div>
+      </div>
 
-                        <hr>
+      <div class="featured-metrics">
+        <div class="feat-metric">
+          <div class="num">10–20<span class="unit">×</span></div>
+          <div class="label" data-es="Reducción de costo" data-en="Cost reduction">Reducción de costo</div>
+        </div>
+        <div class="feat-metric">
+          <div class="num">18<span class="unit">→1</span></div>
+          <div class="label" data-es="Meses a días" data-en="Months to days">Meses a días</div>
+        </div>
+        <div class="feat-metric">
+          <div class="num">80<span class="unit">+ kg</span></div>
+          <div class="label" data-es="Carga validada" data-en="Validated load">Carga validada</div>
+        </div>
+        <div class="feat-metric">
+          <div class="num">L<span class="unit">↔</span>R</div>
+          <div class="label" data-es="Configuración intercambiable" data-en="Interchangeable config.">Configuración intercambiable</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-                        <h4>TOP EXPERTISE</h4>
+<!-- ============ OTHER PROJECTS ============ -->
+<section class="reveal">
+  <div class="section-header">
+    <div class="section-num"><span>03</span> &nbsp; <span data-es="Investigación" data-en="Research">Investigación</span></div>
+    <h2>
+      <span data-es="En" data-en="In">En</span>
+      <span class="light" data-es="curso." data-en="progress.">curso.</span>
+    </h2>
+  </div>
 
-                        <p>Fullstack developer with main focus
-                            on Django and MEVN stack: <a target="_blank" href="./Resume.pdf">Download Resume</a>
-                        </p>
+  <div class="projects-layout">
+    <div></div>
+    <div class="projects-list">
 
-                        <div id="skills">
-                            <ul>
-                                <li>Python</li>
-                                <li>Django</li>
-                                <li>Javascript</li>
-                                <li>Vue.js</li>
-                                <li>Node.js</li>
-                                <li>Express</li>
-                                <li>HTML5 / CSS3</li>
-                                <li>Bootstrap</li>
-                                <li>SQL</li>
-                                <li>PostgreSQL</li>
-                                <li>SCRUM</li>
-                            </ul>
-                            <ul>
-                                <li>MongoDB</li>
-                                <li>Postman</li>
-                                <li>Java</li>
-                                <li>Git</li>
-                                <li>C++</li>
-                                <li>Chatbots</li>
-                                <li>Jupyter Notebooks</li>
-                                <li>Heroku</li>
-                                <li>Arduino</li>
-                                <li>Scratch</li>
-                            </ul>
-                        </div>
-                    </div>
+      <article class="project-row">
+        <div class="proj-num">01 / 03</div>
+        <div class="proj-body">
+          <h4 data-es="Exoesqueleto pediátrico de miembro inferior" data-en="Pediatric lower-limb exoskeleton">Exoesqueleto pediátrico de miembro inferior</h4>
+          <p data-es="Modular y escalable para niños de 2 a 5 años con parálisis cerebral GMFCS V o lesión medular completa, peso de usuario hasta 35 kg. Lidero el diseño mecánico de eslabones estructurales y la arquitectura de control sobre CAN/RS485 con torque/velocidad basado en FOC y transiciones de fase de marcha por FSR."
+             data-en="Modular, scalable exoskeleton for children aged 2–5 with GMFCS Level V cerebral palsy or complete spinal cord injury, supporting up to 35 kg. I lead mechanical design of structural links and motor control architecture over CAN/RS485 with FOC-based torque/velocity control and FSR-driven gait phase transitions.">
+            Modular y escalable para niños de 2 a 5 años con parálisis cerebral GMFCS V o lesión medular completa, peso de usuario hasta 35 kg. Lidero el diseño mecánico de eslabones estructurales y la arquitectura de control sobre CAN/RS485 con torque/velocidad basado en FOC y transiciones de fase de marcha por FSR.
+          </p>
+        </div>
+        <div class="proj-side">
+          <div class="proj-side-meta">2025 — <span data-es="Hoy" data-en="Now">Hoy</span> · R&amp;D</div>
+          <div class="tag-list">
+            <span class="tag">SolidWorks</span>
+            <span class="tag">CAN bus</span>
+            <span class="tag">FOC</span>
+            <span class="tag">ROS</span>
+            <span class="tag">MATLAB</span>
+          </div>
+        </div>
+      </article>
 
-                    <div class="social-links">
-                        <img id="hobbies-pic" src="./resources/images/horizonte.jpg" alt="Me watching the infinity in the chilean sea">
+      <article class="project-row">
+        <div class="proj-num">02 / 03</div>
+        <div class="proj-body">
+          <h4 data-es="Documentación de dispositivos médicos" data-en="Medical device documentation">Documentación de dispositivos médicos</h4>
+          <p data-es="Como contratista de investigación, redacto el manual de usuario y la ficha técnica del dispositivo siguiendo las mejores prácticas de documentación de dispositivos médicos, y co-escribo un manuscrito en preparación sobre el diseño de la prótesis modular pediátrica."
+             data-en="As a research contractor, I author the device user manual and technical datasheet following medical device documentation best practices, and co-author a manuscript in preparation on the modular pediatric prosthesis design.">
+            Como contratista de investigación, redacto el manual de usuario y la ficha técnica del dispositivo siguiendo las mejores prácticas de documentación de dispositivos médicos, y co-escribo un manuscrito en preparación sobre el diseño de la prótesis modular pediátrica.
+          </p>
+        </div>
+        <div class="proj-side">
+          <div class="proj-side-meta">2025 — <span data-es="Hoy" data-en="Now">Hoy</span> · DOC</div>
+          <div class="tag-list">
+            <span class="tag" data-es="Disp. médicos" data-en="Med. devices">Disp. médicos</span>
+            <span class="tag">Datasheet</span>
+            <span class="tag" data-es="Manuscrito" data-en="Manuscript">Manuscrito</span>
+          </div>
+        </div>
+      </article>
 
-                        <h4>Where to find me online</h4>
-                        <i class="fab fa-linkedin fa-3x"></i><p><a target="_blank" href="https://www.linkedin.com/in/sergiotrivi%C3%B1o/">/sergiotriviño</a></p>
-                        <i class="fab fa-github fa-3x"></i><p><a target="_blank" href="https://github.com/sergiotrivino">/sergiotrivino</a></p>
-                        <i class="fas fa-envelope-square fa-3x"></i><p> We may comunicate through the <a href="#contact">form</a></p>
-                    </div>
-                </div>  
+      <article class="project-row">
+        <div class="proj-num">03 / 03</div>
+        <div class="proj-body">
+          <h4 data-es="Desarrollo full-stack" data-en="Full-stack development">Desarrollo full-stack</h4>
+          <p data-es="Plataforma web durante hackathon del MinTIC (2021), sistema de gestión bibliotecaria con stack MEVN, sitio e-commerce con Vue.js + Django REST, y aplicaciones para agendamiento e inventario con Django, Tailwind y Bootstrap."
+             data-en="Web platform during a MinTIC hackathon (2021), library management system on the MEVN stack, e-commerce site with Vue.js + Django REST, and apps for scheduling and inventory with Django, Tailwind and Bootstrap.">
+            Plataforma web durante hackathon del MinTIC (2021), sistema de gestión bibliotecaria con stack MEVN, sitio e-commerce con Vue.js + Django REST, y aplicaciones para agendamiento e inventario con Django, Tailwind y Bootstrap.
+          </p>
+        </div>
+        <div class="proj-side">
+          <div class="proj-side-meta">2020 — 2025 · <span data-es="Freelance" data-en="Freelance">Freelance</span></div>
+          <div class="tag-list">
+            <span class="tag">Vue.js</span>
+            <span class="tag">Django</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">MongoDB</span>
+          </div>
+        </div>
+      </article>
 
-            </div>
-        </section>
+    </div>
+  </div>
+</section>
 
-        <section id="education" class="s1">
-            <div class="main-container">
-                <h3 style="text-align: center;">Educational Background</h3>
+<!-- ============ EXPERIENCE ============ -->
+<section class="reveal">
+  <div class="section-header">
+    <div class="section-num"><span>04</span> &nbsp; <span data-es="Trayectoria" data-en="Career">Trayectoria</span></div>
+    <h2>
+      <span data-es="Experiencia" data-en="Track">Experiencia</span>
+      <span class="light" data-es="profesional." data-en="record.">profesional.</span>
+    </h2>
+  </div>
 
-                <div class="education-wrapper">
-                    <div class="title-date">
-                        <h4>Codecademy</h4>
-                        <h5>Online | Feb 2021 - Current</h5>
-                    </div>
-                    <div class="explanation">
-                        <p>
-                            Currently I am into the Fullstack Engineering career path gaining knowledge and 
-                            expertise in the matter, learning in depth about the Front-end and Back-end from start to finish and the 
-                            connection between the two. 
-                            My goal from here is to practice and learn as much as posible in order to master the necessary skills to 
-                            become a great professional and a valuable teammate.
-                        </p>
-                    </div>
-                </div>
+  <div class="timeline">
+    <div></div>
+    <div class="timeline-list">
 
-                <div class="education-wrapper">
-                    <div class="title-date">
-                        <h4>Codecademy</h4>
-                        <h5>Build Python Web Apps with Django Skill Path <br> | Jun 2021 - Aug 2021</h5>
-                    </div>
-                    <div class="explanation">
-                        <p>
-                            The main advantages of doing this skill path were, first, I learned how to quickly 
-                            create full-stack web apps, second, I applied my Python skills for web development,
-                            and third, I was able to deploy a working application in PythonEverywhere and Heroku
-                        </p>
-                    </div>
-                </div>
+      <div class="exp-row">
+        <div class="exp-when">SEP 2025 — <span data-es="HOY" data-en="NOW">HOY</span><span class="now" data-es="ACTIVO" data-en="ACTIVE">ACTIVO</span></div>
+        <div class="exp-card">
+          <h4 data-es="Contratista de Investigación" data-en="Research Contractor">Contratista de Investigación</h4>
+          <span class="exp-org">Escuela Colombiana de Ingeniería Julio Garavito</span>
+          <p data-es="Continuación del proyecto de prótesis transtibial pasiva pediátrica desarrollado durante la tesis de pregrado. Redacción del manual de usuario y ficha técnica; co-autoría de un manuscrito en preparación sobre el diseño modular y escalable, en colaboración con dos investigadores principales."
+             data-en="Continuation of the pediatric passive transtibial prosthesis project developed during my undergraduate thesis. Authoring the user manual and technical datasheet; co-authoring a manuscript in preparation on the modular and scalable design, with two principal investigators.">
+            Continuación del proyecto de prótesis transtibial pasiva pediátrica desarrollado durante la tesis de pregrado. Redacción del manual de usuario y ficha técnica; co-autoría de un manuscrito en preparación sobre el diseño modular y escalable, en colaboración con dos investigadores principales.
+          </p>
+        </div>
+      </div>
 
-                <div class="education-wrapper">
-                    <div class="title-date">
-                        <h4>Ministerio de las Tecnologías de la Información y Comunicación de Colombia
-                             & Universidad Tecnológica de Pereira
-                        </h4>
-                        <h5>Online | May 2021 - Dec 2021</h5>
-                    </div>
-                    <div class="explanation">
-                        <p>
-                            Current participant in the MisionTIC2022 program developed by the government that 
-                            teaches everything to make fully functioning web applications. Among the topics 
-                            related to the pensum of the program are the fundamentals of programming in Python,
-                            Software development in Java and a deepening cycle in web programming. 
-                            Besides the coding, there are also included in the pensum english classes and coaching lessons.
-                        </p>
-                    </div>
-                </div>
+      <div class="exp-row">
+        <div class="exp-when">MAR 2025 — <span data-es="HOY" data-en="NOW">HOY</span><span class="now" data-es="ACTIVO" data-en="ACTIVE">ACTIVO</span></div>
+        <div class="exp-card">
+          <h4 data-es="Ingeniero de Investigación — Robótica Asistencial Pediátrica" data-en="Research Engineer — Pediatric Assistive Robotics">Ingeniero de Investigación — Robótica Asistencial Pediátrica</h4>
+          <span class="exp-org">Escuela Colombiana de Ingeniería Julio Garavito</span>
+          <p data-es="Diseño de un exoesqueleto modular y escalable de miembro inferior para usuarios de 2–5 años con parálisis cerebral GMFCS V o lesión medular completa. Lidero el diseño mecánico, la selección de actuadores (RobStride RS06, SteadyWin GIM8115-36) y la arquitectura de control sobre CAN bus y RS485 con torque/velocidad basado en FOC y transiciones de fase de marcha por FSR."
+             data-en="Designing a modular and scalable pediatric lower-limb exoskeleton for users aged 2–5 with GMFCS Level V cerebral palsy or complete spinal cord injury. I lead mechanical design, actuator selection (RobStride RS06, SteadyWin GIM8115-36), and motor control architecture over CAN bus and RS485 with FOC-based torque/velocity control and FSR-driven gait phase transitions.">
+            Diseño de un exoesqueleto modular y escalable de miembro inferior para usuarios de 2–5 años con parálisis cerebral GMFCS V o lesión medular completa. Lidero el diseño mecánico, la selección de actuadores (RobStride RS06, SteadyWin GIM8115-36) y la arquitectura de control sobre CAN bus y RS485 con torque/velocidad basado en FOC y transiciones de fase de marcha por FSR.
+          </p>
+        </div>
+      </div>
 
-                <div class="education-wrapper">
-                    <div class="title-date">
-                        <h4>Pontificia Universidad Javeriana & Samsung Innovation Campus</h4>
-                        <h5>Online | Dec 2020 - Jun 2021</h5>
-                    </div>
-                    <div class="explanation">
-                        <p>
-                            6 months of intensive programming in which I learned to code in Scratch, 
-                            to use the Rurple platform and control a little robot, at that time I already 
-                            knew Python so it was great to practice my skills throughout this course, coded C++ 
-                            and C in Dev-C++ platform as well, and learned to code with Arduino along with 
-                            other electronic components like LEDs, protoboard, resistances, microphone, among other
-                            components. <br> 
-                            As part of the tasks, a game had to be developed with Scratch, which ended up winning 
-                            for best game. <br>
-                            Take a look to it if you want, <a href="https://scratch.mit.edu/projects/544866227/">here</a>.  
-                        </p>
-                    </div>
-                </div>
+      <div class="exp-row">
+        <div class="exp-when">OCT 2021 — MAR 2025</div>
+        <div class="exp-card">
+          <h4 data-es="Analista de Control de Proyectos" data-en="Project Control Analyst">Analista de Control de Proyectos</h4>
+          <span class="exp-org">LAINGENIERIA S.A.S</span>
+          <p data-es="Reportes semanales de progreso comparando ejecución real vs. cronograma planeado para proyectos de edificios residenciales en Excel; reportes mensuales de control de costos comparando gastos ejecutados vs. presupuesto."
+             data-en="Weekly progress reports comparing actual execution against the planned schedule for residential apartment building projects in Excel; monthly cost-control reports comparing executed expenditures against budget.">
+            Reportes semanales de progreso comparando ejecución real vs. cronograma planeado para proyectos de edificios residenciales en Excel; reportes mensuales de control de costos comparando gastos ejecutados vs. presupuesto.
+          </p>
+        </div>
+      </div>
 
-                <div class="education-wrapper">
-                    <div class="title-date">
-                        <h4>Universidad del Rosario & Escuela Colombiana de Ingeniería Julio Garavito</h4>
-                        <h5>BS Biomedical Engineering | Bogotá, Colombia | 2014 - 2020</h5>
-                    </div>
-                    <div class="explanation">
-                        <p>
-                            7 of 9 semesters in which I learned everything I know about advance mathematics 
-                            and science. During this time I developed a highly analytical aproach to problem solving,
-                            teamwork ,and a deep understanding about the numerous ways a situation can be solved. <br>
-                            Related to the science site of the story, biology, chemistry and physics were something that
-                            I really enjoyed and like to this day. <br>
-                            I took some classes on business administration and innovative thinking as well.
-                        </p>
-                    </div>
-                </div>
+      <div class="exp-row">
+        <div class="exp-when">SEP 2020 — MAR 2025</div>
+        <div class="exp-card">
+          <h4 data-es="Desarrollador Full-Stack Freelance" data-en="Freelance Full-Stack Developer">Desarrollador Full-Stack Freelance</h4>
+          <span class="exp-org" data-es="Independiente" data-en="Independent">Independiente</span>
+          <p data-es="Plataformas web con stacks MEVN, Vue.js + Django REST, Tailwind y Bootstrap para clientes en gestión bibliotecaria, e-commerce, agendamiento e inventario."
+             data-en="Web platforms with MEVN, Vue.js + Django REST, Tailwind and Bootstrap stacks for clients in library management, e-commerce, scheduling and inventory.">
+            Plataformas web con stacks MEVN, Vue.js + Django REST, Tailwind y Bootstrap para clientes en gestión bibliotecaria, e-commerce, agendamiento e inventario.
+          </p>
+        </div>
+      </div>
 
-                <div class="education-wrapper">
-                    <div class="title-date">
-                        <h4>Liceo Catedral High School</h4>
-                        <h5>Zipaquirá, Colombia | Class 2013</h5>
-                    </div>
-                    <div class="explanation">
-                        <p>
-                            I graduated highschool, where I enjoyed doing sports and arts, but also was pretty aware of my good 
-                            taste for biology, science and math. If there was a competition no matter the discipline,
-                            I already would had been involved. <br>
-                            It was a great time in which like every kid that loved soccer, it didn't matter the place or the moment,
-                            there was always a good match to play.
-                        </p>
-                    </div>
-                </div>
+    </div>
+  </div>
+</section>
 
-            </div>
-        </section>
+<!-- ============ PRESS ============ -->
+<section id="press" class="reveal">
+  <div class="section-header">
+    <div class="section-num"><span>05</span> &nbsp; <span data-es="Cobertura" data-en="Coverage">Cobertura</span></div>
+    <h2>
+      <span data-es="En los" data-en="In the">En los</span>
+      <span class="accent" data-es="medios." data-en="press.">medios.</span>
+    </h2>
+  </div>
 
-        <section id="projects" class="s2">
-            <div class="main-container">
-                <h3 style="text-align: center;">Some of my projects</h3>
+  <div class="press-layout">
+    <div></div>
+    <div class="press-list">
 
-                <div class="post-wrapper">
-                    <div>
-                        <div class="post">
-                            <img class="thumbnail" src="./resources/images/DjangoTrain.PNG" alt="" width="300px" height="180px">
-                            <div class="post-preview">
-                                <h6 class="post-title">Django Train</h6>
-                                <p class="post-intro">
-                                    Software that helps to manage all the lines,
-                                    stops and stations in the transport 
-                                    system of a city. Made with Django.
-                                </p>
-                                <a href="https://djangotrainsto.herokuapp.com/" target="_blank">Take a look</a>
-                            </div>
-                        </div>
-                    </div>
+      <a href="https://www.semana.com/nacion/articulo/estudiante-colombiano-crea-protesis-3d-y-transforma-la-vida-de-una-nina-que-nacio-sin-pierna/202551/" target="_blank" rel="noopener" class="press-row">
+        <div class="press-num">01 / 06</div>
+        <div class="press-body">
+          <div class="press-outlet">Semana</div>
+          <div class="press-quote" data-es="«Estudiante colombiano crea prótesis 3D y transforma la vida de una niña que nació sin pierna»"
+                                    data-en="«Colombian student creates 3D prosthesis and transforms the life of a girl born without a leg»">
+            «Estudiante colombiano crea prótesis 3D y transforma la vida de una niña que nació sin pierna»
+          </div>
+          <div class="press-meta" data-es="31 may 2025 · Nacional" data-en="May 31, 2025 · National">31 may 2025 · Nacional</div>
+        </div>
+        <div class="press-cta" data-es="Leer ↗" data-en="Read ↗">Leer ↗</div>
+      </a>
 
-                    <div>
-                        <div class="post">
-                            <img class="thumbnail vet" src="./resources/images/vetoffice.png" alt="" width="300px" height="180px">
-                            <div class="post-preview">
-                                <h6 class="post-title">VetOffice</h6>
-                                <p class="post-intro">With this software every 
-                                    veterinarian is able to manage all the appointments, and 
-                                    all the patients with their respective owners in an organize 
-                                    and simple way. Made with Django.
-                                </p>
-                                <a href="https://veterinaryoffice.herokuapp.com/" target="_blank">Take a look</a>
-                            </div>
-                        </div>
-                    </div>
+      <a href="https://www.eltiempo.com/salud/estudiante-creo-protesis-para-nina-que-nacio-sin-una-pierna-se-fabrica-en-un-dia-y-se-adapta-a-cualquier-terreno-3460212" target="_blank" rel="noopener" class="press-row">
+        <div class="press-num">02 / 06</div>
+        <div class="press-body">
+          <div class="press-outlet">El Tiempo</div>
+          <div class="press-quote" data-es="«Se fabrica en un día y se adapta a cualquier terreno»"
+                                    data-en="«Built in a day, adapts to any terrain»">
+            «Se fabrica en un día y se adapta a cualquier terreno»
+          </div>
+          <div class="press-meta" data-es="20 jun 2025 · Nacional" data-en="Jun 20, 2025 · National">20 jun 2025 · Nacional</div>
+        </div>
+        <div class="press-cta" data-es="Leer ↗" data-en="Read ↗">Leer ↗</div>
+      </a>
 
-                    <div>
-                        <div class="post">
-                            <img class="thumbnail" src="./resources/images/LoadingPage.PNG" alt="">
-                            <div class="post-preview">
-                                <h6 class="post-title">Loading Page</h6>
-                                <p class="post-intro">Loading page made with some 
-                                    vanilla Javascript that allows you to
-                                    see how much your page has loaded and the less 
-                                    it is missing the better you will see your page.  
-                                </p>
-                                <a href="https://sergiotrivino.github.io/loading-page/" target="_blank">Take a look</a>
-                            </div>
-                        </div>
-                    </div>
+      <a href="https://colombia.as.com/actualidad/comenzo-como-un-trabajo-de-grado-y-cambio-la-vida-de-una-nina-en-colombia-la-impresionante-creacion-3d-de-este-estudiante-n/" target="_blank" rel="noopener" class="press-row">
+        <div class="press-num">03 / 06</div>
+        <div class="press-body">
+          <div class="press-outlet">AS Colombia</div>
+          <div class="press-quote" data-es="«La impresionante creación 3D de este estudiante»"
+                                    data-en="«The impressive 3D creation of this student»">
+            «La impresionante creación 3D de este estudiante»
+          </div>
+          <div class="press-meta" data-es="2025 · Internacional" data-en="2025 · International">2025 · Internacional</div>
+        </div>
+        <div class="press-cta" data-es="Leer ↗" data-en="Read ↗">Leer ↗</div>
+      </a>
 
-                    <div>
-                        <div class="post">
-                            <img class="thumbnail" src="./resources/images/pexels-fernando-arcos-211122.jpg" alt="">
-                            <div class="post-preview">
-                                <h6 class="post-title">Customer Relationship Management</h6>
-                                <p class="post-intro">Currently working on a system 
-                                    that allows you to manage all your company's 
-                                    relationships and interactions with customers and 
-                                    potential customers, with Django. 
-                                </p>
-                                <a href="#">Coming Soon</a>
-                            </div>
-                        </div>
-                    </div>
+      <a href="https://lanotaeconomica.com.co/movidas-empresarial/estudiante-colombiano-disena-protesis-de-pie-con-tecnologia-3d-para-cambiar-la-vida-de-una-nina-de-14-anos/" target="_blank" rel="noopener" class="press-row">
+        <div class="press-num">04 / 06</div>
+        <div class="press-body">
+          <div class="press-outlet">La Nota Económica</div>
+          <div class="press-quote" data-es="«Diseña prótesis de pie con tecnología 3D para cambiar la vida de una niña de 14 años»"
+                                    data-en="«Designs 3D-printed foot prosthesis to change the life of a 14-year-old girl»">
+            «Diseña prótesis de pie con tecnología 3D para cambiar la vida de una niña de 14 años»
+          </div>
+          <div class="press-meta" data-es="27 may 2025 · Económico" data-en="May 27, 2025 · Business">27 may 2025 · Económico</div>
+        </div>
+        <div class="press-cta" data-es="Leer ↗" data-en="Read ↗">Leer ↗</div>
+      </a>
 
-                </div>
+      <a href="https://www.escuelaing.edu.co/es/noticias/estudiante-de-biomedica-disena-protesis-de-pie-con-tecnologia-3d-para-cambiar-la-vida-de-una-nina-de-14-anos/" target="_blank" rel="noopener" class="press-row">
+        <div class="press-num">05 / 06</div>
+        <div class="press-body">
+          <div class="press-outlet">Escuela Colombiana de Ingeniería</div>
+          <div class="press-quote" data-es="«Estudiante de Biomédica diseña prótesis de pie con tecnología 3D»"
+                                    data-en="«Biomedical student designs 3D-printed foot prosthesis»">
+            «Estudiante de Biomédica diseña prótesis de pie con tecnología 3D»
+          </div>
+          <div class="press-meta" data-es="30 may 2025 · Institucional" data-en="May 30, 2025 · Institutional">30 may 2025 · Institucional</div>
+        </div>
+        <div class="press-cta" data-es="Leer ↗" data-en="Read ↗">Leer ↗</div>
+      </a>
 
-            </div>
-        </section>
+      <a href="https://ascun.org.co/noticias-ies/estudiante-colombiano-diseno-protesis-de-pie-con-tecnologia-3d-para-cambiar-la-vida-de-una-nina-de-14-anos-escuela-colombiana-de-ingenieria-julio-garavito/" target="_blank" rel="noopener" class="press-row">
+        <div class="press-num">06 / 06</div>
+        <div class="press-body">
+          <div class="press-outlet">ASCUN</div>
+          <div class="press-quote" data-es="«Estudiante colombiano diseñó prótesis de pie con tecnología 3D»"
+                                    data-en="«Colombian student designed a 3D-printed foot prosthesis»">
+            «Estudiante colombiano diseñó prótesis de pie con tecnología 3D»
+          </div>
+          <div class="press-meta" data-es="17 oct 2025 · Académico" data-en="Oct 17, 2025 · Academic">17 oct 2025 · Académico</div>
+        </div>
+        <div class="press-cta" data-es="Leer ↗" data-en="Read ↗">Leer ↗</div>
+      </a>
 
-        <section id="contact" class="s1">
-            <div class="main-container">
-                <h3 style="text-align: center;">Get in touch</h3>
+    </div>
+  </div>
+</section>
 
-                <form id="contact-form" class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net" 
-                action="https://script.google.com/macros/s/AKfycbyFh2V85YiGOiupNu8_MWr0RbJQYE-MeMcgdeXE/exec">
-                    <label for="name">Name</label>
-                    <input id="name" class="input-field" type="text" name="name">
+<!-- ============ SKILLS ============ -->
+<section class="reveal">
+  <div class="section-header">
+    <div class="section-num"><span>06</span> &nbsp; <span data-es="Capacidades" data-en="Capabilities">Capacidades</span></div>
+    <h2>
+      <span data-es="Stack" data-en="Tech">Stack</span>
+      <span class="light" data-es="técnico." data-en="stack.">técnico.</span>
+    </h2>
+  </div>
 
-                    <label for="subject">Subject</label>
-                    <input id="subject" class="input-field" type="text" name="subject">
+  <div class="skills-layout">
+    <div></div>
+    <div class="skills-grid">
+      <div class="skill-cell">
+        <h4 data-es="Programación" data-en="Programming">Programación</h4>
+        <p>Python, MATLAB, <span class="muted">NumPy, Pandas, Git, GitHub</span></p>
+      </div>
+      <div class="skill-cell">
+        <h4 data-es="Robótica y control" data-en="Robotics &amp; control">Robótica y control</h4>
+        <p>ROS, CAN bus, RS485, FOC, PID, <span class="muted">IMU, FSR, encoders, sistemas embebidos</span></p>
+      </div>
+      <div class="skill-cell">
+        <h4 data-es="CAD y simulación" data-en="CAD &amp; simulation">CAD y simulación</h4>
+        <p>SolidWorks, Fusion 360, FEM/FEA, <span class="muted">MATLAB Simulink</span></p>
+      </div>
+      <div class="skill-cell">
+        <h4 data-es="Manufactura" data-en="Manufacturing">Manufactura</h4>
+        <p data-es="FDM, fibra de carbono continua (Markforged), <span class='muted'>laminación de compuestos, mecanizado CNC</span>"
+           data-en="FDM, continuous carbon fiber (Markforged), <span class='muted'>composite lamination, CNC machining</span>">
+          FDM, fibra de carbono continua (Markforged), <span class="muted">laminación de compuestos, mecanizado CNC</span>
+        </p>
+      </div>
+      <div class="skill-cell">
+        <h4 data-es="Dominio" data-en="Domain">Dominio</h4>
+        <p data-es="Biomecánica de marcha, prótesis y ortesis, <span class='muted'>diseño de dispositivos médicos, GMFCS</span>"
+           data-en="Gait biomechanics, prosthetics &amp; orthotics, <span class='muted'>medical device design, GMFCS</span>">
+          Biomecánica de marcha, prótesis y ortesis, <span class="muted">diseño de dispositivos médicos, GMFCS</span>
+        </p>
+      </div>
+      <div class="skill-cell">
+        <h4 data-es="Idiomas" data-en="Languages">Idiomas</h4>
+        <p data-es="Español (nativo), Inglés (C1), <span class='muted'>Alemán (A1)</span>"
+           data-en="Spanish (native), English (C1), <span class='muted'>German (A1)</span>">
+          Español (nativo), Inglés (C1), <span class="muted">Alemán (A1)</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-                    <label for="email">Email</label>
-                    <input id="email" class="input-field" type="email" name="email" 
-                        value="" required placeholder="your.name@email.com" >
-                    <span class="email-invalid" style="display:none">
-                        Must be a valid email address</span>
+<!-- ============ EDUCATION + CERTS ============ -->
+<section class="reveal">
+  <div class="section-header">
+    <div class="section-num"><span>07</span> &nbsp; <span data-es="Formación" data-en="Education">Formación</span></div>
+    <h2>
+      <span data-es="Académica y" data-en="Academic &amp;">Académica y</span>
+      <span class="light" data-es="certificaciones." data-en="certifications.">certificaciones.</span>
+    </h2>
+  </div>
 
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" class="input-field" ></textarea>
+  <div class="formation-layout">
+    <div></div>
+    <div class="formation-grid">
+      <div class="formation-block">
+        <h3 data-es="Educación &amp; charlas" data-en="Education &amp; talks">Educación &amp; charlas</h3>
+        <div class="form-item">
+          <h4 data-es="B.Sc. Ingeniería Biomédica" data-en="B.Sc. Biomedical Engineering">B.Sc. Ingeniería Biomédica</h4>
+          <p>Univ. del Rosario &amp; Esc. Col. Ing. Julio Garavito · MAR 2025</p>
+        </div>
+        <div class="form-item">
+          <h4 data-es="Conferencista invitado" data-en="Invited speaker">Conferencista invitado</h4>
+          <p data-es="Colegio Corazonista de Bogotá · FEB 2025"
+             data-en="Colegio Corazonista de Bogotá · FEB 2025">
+            Colegio Corazonista de Bogotá · FEB 2025
+          </p>
+        </div>
+      </div>
 
-                    <input id="submit-btn" type="submit" value="Send">
+      <div class="formation-block">
+        <h3 data-es="Certificaciones" data-en="Certifications">Certificaciones</h3>
+        <div class="form-item">
+          <h4 data-es="Desarrollador de Software" data-en="Software Developer">Desarrollador de Software</h4>
+          <p>MinTIC &amp; Univ. Tecnológica de Pereira · AUG 2021</p>
+        </div>
+        <div class="form-item">
+          <h4>REST APIs · Spring &amp; Java</h4>
+          <p>Codecademy · FEB 2022</p>
+        </div>
+        <div class="form-item">
+          <h4>Python Web Apps · Flask</h4>
+          <p>Codecademy · JAN 2022</p>
+        </div>
+        <div class="form-item">
+          <h4>Python Web Apps · Django</h4>
+          <p>Codecademy · DEC 2021</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-                    <div class="thankyou_message" style="display:none;">
-                        <h2><em>Thanks</em> for contacting me!
-                          I will get back to you soon!</h2>
-                    </div>
+</main>
 
-                </form>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <div class="footer">
-            <p>Copyright 2021 © All Rights Reserved By Sergio Triviño </p>
-        </div>     
-    </footer>
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="contact-section reveal">
+  <div class="contact-eyebrow">
+    <span class="dot"></span>
+    <span data-es="08 — Contacto · Disponible globalmente"
+          data-en="08 — Contact · Available globally">08 — Contacto · Disponible globalmente</span>
+  </div>
 
-    <script>
+  <h2 class="contact-heading">
+    <span data-es="Construyamos" data-en="Let's build">Construyamos</span>
+    <span class="accent" data-es="algo" data-en="something">algo</span>
+    <span class="light" data-es="que importe." data-en="that matters.">que importe.</span>
+  </h2>
 
-        //Get the button
-        var mybutton = document.getElementById("myBtn");
+  <div class="contact-email-wrapper">
+    <a href="mailto:sergio.trivino97@gmail.com" class="contact-email">
+      sergio.trivino97@gmail.com <span>→</span>
+    </a>
+  </div>
 
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function() {scrollFunction()};
+  <div class="contact-grid">
+    <div class="contact-cell">
+      <span class="label">LinkedIn</span>
+      <a href="https://www.linkedin.com/in/sergiotriivino/" target="_blank" rel="noopener">/sergiotriivino ↗</a>
+    </div>
+    <div class="contact-cell">
+      <span class="label">GitHub</span>
+      <a href="https://github.com/sergiotrivino" target="_blank" rel="noopener">/sergiotrivino ↗</a>
+    </div>
+    <div class="contact-cell">
+      <span class="label" data-es="Teléfono" data-en="Phone">Teléfono</span>
+      <a href="tel:+573184352580">+57 318 435 2580</a>
+    </div>
+    <div class="contact-cell">
+      <span class="label">CV</span>
+      <button type="button" class="linklike" onclick="openCVModal()" data-es="Solicitar CV ↗" data-en="Request CV ↗">Solicitar CV ↗</button>
+    </div>
+  </div>
+</section>
 
-        function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
-        }
-        }
+<footer>
+  <span>© <span id="year"></span> Sergio Triviño Ortega</span>
+  <span data-es="Hecho en Zipaquirá, Colombia"
+        data-en="Made in Zipaquirá, Colombia">Hecho en Zipaquirá, Colombia</span>
+  <button type="button" class="linklike" onclick="openCVModal()" data-es="Solicitar CV →" data-en="Request CV →">Solicitar CV →</button>
+</footer>
 
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-        }
+<!-- ============ MODAL: SOLICITAR CV ============ -->
+<div class="modal-overlay" id="cvModal" role="dialog" aria-modal="true" aria-labelledby="cvModalTitle">
+  <div class="modal" role="document">
+    <button type="button" class="modal-close" onclick="closeCVModal()" aria-label="Cerrar">✕</button>
 
-    </script>
-    <script type="text/javascript" src="./script.js"></script>
-    <script data-cfasync="false" type="text/javascript" src="./form-submission-handler.js"></script>
+    <div class="modal-eyebrow">
+      <span class="dot"></span>
+      <span data-es="Solicitud de CV" data-en="CV request">Solicitud de CV</span>
+    </div>
+
+    <h3 id="cvModalTitle"
+        data-es="Cuéntame quién eres y te envío el CV."
+        data-en="Tell me who you are and I'll send you the CV.">
+      Cuéntame quién eres y te envío el CV.
+    </h3>
+
+    <p class="modal-intro"
+       data-es="Reviso cada solicitud personalmente. Recibirás el CV por correo en menos de 24 horas."
+       data-en="I review each request personally. You'll receive the CV by email within 24 hours.">
+      Reviso cada solicitud personalmente. Recibirás el CV por correo en menos de 24 horas.
+    </p>
+
+    <form class="modal-form" id="cvForm" novalidate>
+      <!-- Honeypot anti-spam: invisible para humanos, los bots lo llenan -->
+      <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+      <div class="field-group" data-field="name">
+        <label for="f-name" data-es="Nombre completo" data-en="Full name">
+          <span class="lang-es">Nombre completo</span><span class="lang-en">Full name</span><span class="req">*</span>
+        </label>
+        <input type="text" id="f-name" name="name" required minlength="2" maxlength="80" autocomplete="name" />
+        <span class="err" data-es="Por favor ingresa tu nombre" data-en="Please enter your name">Por favor ingresa tu nombre</span>
+      </div>
+
+      <div class="field-group" data-field="email">
+        <label for="f-email">
+          <span class="lang-es">Email corporativo</span><span class="lang-en">Corporate email</span><span class="req">*</span>
+        </label>
+        <input type="email" id="f-email" name="email" required maxlength="100" autocomplete="email" />
+        <span class="hint"
+              data-es="Email personal aceptado para investigadores independientes."
+              data-en="Personal email accepted for independent researchers.">
+          Email personal aceptado para investigadores independientes.
+        </span>
+        <span class="err" data-es="Ingresa un email válido" data-en="Enter a valid email">Ingresa un email válido</span>
+      </div>
+
+      <div class="field-group" data-field="company">
+        <label for="f-company">
+          <span class="lang-es">Empresa o institución</span><span class="lang-en">Company or institution</span><span class="req">*</span>
+        </label>
+        <input type="text" id="f-company" name="company" required minlength="2" maxlength="100" autocomplete="organization" />
+        <span class="err" data-es="Por favor indica tu empresa o institución" data-en="Please indicate your company or institution">Por favor indica tu empresa o institución</span>
+      </div>
+
+      <div class="field-group" data-field="role">
+        <label for="f-role">
+          <span class="lang-es">Cargo o rol</span><span class="lang-en">Role</span><span class="req">*</span>
+        </label>
+        <input type="text" id="f-role" name="role" required minlength="2" maxlength="100" autocomplete="organization-title" placeholder="" />
+        <span class="hint"
+              data-es="Ej: Talent Acquisition, Hiring Manager, Senior Engineer, PI."
+              data-en="E.g. Talent Acquisition, Hiring Manager, Senior Engineer, PI.">
+          Ej: Talent Acquisition, Hiring Manager, Senior Engineer, PI.
+        </span>
+        <span class="err" data-es="Por favor indica tu cargo" data-en="Please indicate your role">Por favor indica tu cargo</span>
+      </div>
+
+      <div class="field-group" data-field="reason">
+        <label for="f-reason">
+          <span class="lang-es">Motivo del interés</span><span class="lang-en">Reason for interest</span><span class="req">*</span>
+        </label>
+        <textarea id="f-reason" name="reason" required minlength="20" maxlength="600" rows="3"></textarea>
+        <span class="hint"
+              data-es="¿Para qué posición o proyecto? Cuanto más específico, más rápido respondo."
+              data-en="For which position or project? The more specific, the faster I'll respond.">
+          ¿Para qué posición o proyecto? Cuanto más específico, más rápido respondo.
+        </span>
+        <span class="err" data-es="Cuéntame al menos un par de líneas (20+ caracteres)" data-en="Tell me at least a couple of lines (20+ characters)">Cuéntame al menos un par de líneas (20+ caracteres)</span>
+      </div>
+
+      <div class="field-group" data-field="linkedin">
+        <label for="f-linkedin">
+          <span class="lang-es">LinkedIn</span><span class="lang-en">LinkedIn</span>
+          <span class="opt" data-es="(opcional)" data-en="(optional)">(opcional)</span>
+        </label>
+        <input type="url" id="f-linkedin" name="linkedin" maxlength="200" placeholder="https://linkedin.com/in/..." autocomplete="url" />
+        <span class="err" data-es="Ingresa una URL válida" data-en="Enter a valid URL">Ingresa una URL válida</span>
+      </div>
+
+      <div class="modal-footer">
+        <p class="modal-disclaimer"
+           data-es="Tus datos solo se usan para responder a tu solicitud. No se comparten con terceros."
+           data-en="Your data is only used to respond to your request. Not shared with third parties.">
+          Tus datos solo se usan para responder a tu solicitud. No se comparten con terceros.
+        </p>
+        <button type="submit" class="btn-submit" id="cvSubmit">
+          <span class="spinner"></span>
+          <span data-es="Enviar solicitud" data-en="Send request">Enviar solicitud</span>
+          <span class="arrow">→</span>
+        </button>
+      </div>
+    </form>
+
+    <div class="modal-success">
+      <div class="success-icon">✓</div>
+      <h3 class="success-title"
+          data-es="Solicitud recibida."
+          data-en="Request received.">Solicitud recibida.</h3>
+      <p data-es="Gracias por tu interés. Estoy revisando tu solicitud y te enviaré el CV por correo en menos de 24 horas."
+         data-en="Thanks for your interest. I'm reviewing your request and will send the CV by email within 24 hours.">
+        Gracias por tu interés. Estoy revisando tu solicitud y te enviaré el CV por correo en menos de 24 horas.
+      </p>
+      <button type="button" class="btn btn-ghost" onclick="closeCVModal()" data-es="Cerrar" data-en="Close">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ===================================================================
+// LANGUAGE TOGGLE
+// ===================================================================
+function setLang(lang) {
+  document.documentElement.setAttribute('lang', lang);
+  document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.querySelectorAll('[data-es][data-en]').forEach(el => {
+    const text = el.getAttribute('data-' + lang);
+    if (text === null) return;
+    if (text.includes('<')) { el.innerHTML = text; }
+    else { el.textContent = text; }
+  });
+  document.title = lang === 'en'
+    ? 'Sergio Triviño Ortega — Biomedical Engineer'
+    : 'Sergio Triviño Ortega — Ingeniero Biomédico';
+  try { localStorage.setItem('lang', lang); } catch(e){}
+}
+try {
+  const saved = localStorage.getItem('lang');
+  if (saved === 'en') setLang('en');
+} catch(e){}
+
+// ===================================================================
+// NAV SCROLL EFFECT
+// ===================================================================
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 30);
+});
+
+// ===================================================================
+// REVEAL ON SCROLL
+// ===================================================================
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.05, rootMargin: '0px 0px -80px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ===================================================================
+// YEAR FOOTER
+// ===================================================================
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// ===================================================================
+// MODAL CV — open / close
+// ===================================================================
+const cvModal = document.getElementById('cvModal');
+const cvForm = document.getElementById('cvForm');
+const cvModalEl = cvModal.querySelector('.modal');
+
+function openCVModal() {
+  cvModal.classList.add('visible');
+  document.documentElement.classList.add('modal-open');
+  // focus first field after animation
+  setTimeout(() => { document.getElementById('f-name').focus(); }, 350);
+}
+
+function closeCVModal() {
+  cvModal.classList.remove('visible');
+  document.documentElement.classList.remove('modal-open');
+  // reset form after a short delay so user doesn't see it flash
+  setTimeout(() => {
+    cvModalEl.classList.remove('is-success');
+    cvForm.reset();
+    cvForm.querySelectorAll('.field-group').forEach(g => g.classList.remove('invalid'));
+  }, 350);
+}
+
+// Close on overlay click
+cvModal.addEventListener('click', (e) => {
+  if (e.target === cvModal) closeCVModal();
+});
+
+// Close on Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && cvModal.classList.contains('visible')) closeCVModal();
+});
+
+// ===================================================================
+// MODAL CV — validation + submission to Google Forms
+// ===================================================================
+function validateField(group) {
+  const input = group.querySelector('input, textarea');
+  if (!input) return true;
+  let valid = input.checkValidity();
+  // Extra: URL field optional should pass when empty
+  if (input.type === 'url' && input.value.trim() === '') valid = true;
+  group.classList.toggle('invalid', !valid);
+  return valid;
+}
+
+// Real-time validation: clear invalid state on input
+cvForm.querySelectorAll('input, textarea').forEach(el => {
+  el.addEventListener('input', () => {
+    const group = el.closest('.field-group');
+    if (group && group.classList.contains('invalid')) validateField(group);
+  });
+  el.addEventListener('blur', () => {
+    const group = el.closest('.field-group');
+    if (group && el.value.trim() !== '') validateField(group);
+  });
+});
+
+cvForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  // Validate all
+  let allValid = true;
+  cvForm.querySelectorAll('.field-group').forEach(group => {
+    if (!validateField(group)) allValid = false;
+  });
+  if (!allValid) {
+    cvForm.querySelector('.field-group.invalid input, .field-group.invalid textarea')?.focus();
+    return;
+  }
+
+  // Honeypot: if "website" field has any value, silently "succeed" (don't submit)
+  const honeypot = cvForm.querySelector('input[name="website"]').value;
+  const submitBtn = document.getElementById('cvSubmit');
+  submitBtn.classList.add('loading');
+  submitBtn.disabled = true;
+
+  if (honeypot) {
+    // Pretend success but don't actually submit
+    setTimeout(() => {
+      cvModalEl.classList.add('is-success');
+      submitBtn.classList.remove('loading');
+      submitBtn.disabled = false;
+    }, 800);
+    return;
+  }
+
+  // Build Google Forms submission
+  const cfg = window.GFORM_CONFIG;
+  const formData = new FormData();
+  formData.append(cfg.fields.name, document.getElementById('f-name').value.trim());
+  formData.append(cfg.fields.email, document.getElementById('f-email').value.trim());
+  formData.append(cfg.fields.company, document.getElementById('f-company').value.trim());
+  formData.append(cfg.fields.role, document.getElementById('f-role').value.trim());
+  formData.append(cfg.fields.reason, document.getElementById('f-reason').value.trim());
+  formData.append(cfg.fields.linkedin, document.getElementById('f-linkedin').value.trim());
+
+  const url = `https://docs.google.com/forms/d/e/${cfg.formId}/formResponse`;
+
+  try {
+    // Google Forms returns CORS errors but DOES register the submission.
+    // We use no-cors to avoid the error and trust the submission went through.
+    await fetch(url, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: formData
+    });
+    // Show success regardless of response (no-cors returns opaque)
+    cvModalEl.classList.add('is-success');
+  } catch (err) {
+    // Even on network error, the form may have been submitted; show success
+    // but log the error for the developer
+    console.warn('CV form submission warning:', err);
+    cvModalEl.classList.add('is-success');
+  } finally {
+    submitBtn.classList.remove('loading');
+    submitBtn.disabled = false;
+  }
+});
+
+// ===================================================================
+// PHOTO PLACEHOLDERS — auto-detect when an <img> is added
+// (just for visual cleanup if you replace the placeholder div with an img)
+// ===================================================================
+document.querySelectorAll('.photo-frame').forEach(frame => {
+  if (frame.querySelector('img')) frame.classList.add('has-image');
+});
+</script>
+
 </body>
 </html>
