@@ -17,12 +17,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-
+<!-- =====================================================
+     CONFIGURACIÓN DEL FORMULARIO DE GOOGLE FORMS
+     =====================================================
+     Reemplaza los IDs siguientes con los de TU Google Form.
+     Las instrucciones para obtenerlos están en SETUP.md
+     ===================================================== -->
 <script>
   window.GFORM_CONFIG = {
-    
+    // El "form ID" del URL: docs.google.com/forms/d/e/FORM_ID/formResponse
     formId: "1FAIpQLSeUPImCVK6qhcJ25LYQyO4uPoItiih1AA-B5sg73htNjAnJwQ",
-    
+    // IDs de cada campo del form (entry.XXXXXXXXX)
     fields: {
       name:    "entry.908904742",
       email:   "entry.273068794",
@@ -1442,20 +1447,10 @@ html:not([lang="en"]) .lang-en { display: none; }
 
   <div class="about-layout">
     <!-- ============================================================
-         📷 IMAGEN 1: FOTO RETRATO
-         Reemplaza el contenido del .photo-frame con:
-         <img src="img/sergio-portrait.jpg" alt="Sergio Triviño Ortega" />
-         Recomendación: 800×1000 px (vertical 4:5), JPG comprimido < 200KB
+         📷 IMAGEN 1: FOTO RETRATO ✅ INSTALADA
          ============================================================ -->
-    <div class="photo-frame" id="photo-portrait">
-      <div class="photo-placeholder">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-          <path d="M12 12a4 4 0 100-8 4 4 0 000 8z" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M4 21a8 8 0 0116 0" stroke="currentColor" stroke-width="1.5"/>
-        </svg>
-        <strong data-es="Foto retrato" data-en="Portrait">Foto retrato</strong>
-        <span data-es="800×1000 px · vertical 4:5" data-en="800×1000 px · vertical 4:5">800×1000 px · vertical 4:5</span>
-      </div>
+    <div class="photo-frame has-image" id="photo-portrait">
+      <img src="img/sergio-portrait.jpg" alt="Sergio Triviño Ortega — Biomedical Engineer" />
     </div>
 
     <div class="about-text">
@@ -1552,45 +1547,20 @@ html:not([lang="en"]) .lang-en { display: none; }
       </p>
 
       <!-- ============================================================
-           📷 IMÁGENES 2-4: GALERÍA DE LA PRÓTESIS (3 fotos)
-           Reemplaza el contenido de cada .photo-frame con:
-           <img src="img/prosthesis-1.jpg" alt="Vista lateral de la prótesis" />
-           Recomendación: 800×800 px (cuadradas), JPG < 200KB cada una
-           Ideas: vista completa · detalle modular · CFRP/Markforged · ensayo
+           📷 IMÁGENES 2-4: GALERÍA DE LA PRÓTESIS ✅ INSTALADAS
            ============================================================ -->
       <div class="featured-gallery">
-        <div class="photo-frame">
-          <div class="photo-placeholder">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-              <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="9" cy="9" r="2" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M21 15l-5-5L5 21" stroke="currentColor" stroke-width="1.5"/>
-            </svg>
-            <strong data-es="Foto 1 — Prótesis" data-en="Photo 1 — Prosthesis">Foto 1 — Prótesis</strong>
-            <span data-es="Vista completa" data-en="Full view">Vista completa</span>
-          </div>
+        <div class="photo-frame has-image">
+          <img src="img/prosthesis-1.jpg"
+               alt="Pediatric transtibial prosthesis next to a sneaker — full view showing scale and modularity" />
         </div>
-        <div class="photo-frame">
-          <div class="photo-placeholder">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-              <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="9" cy="9" r="2" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M21 15l-5-5L5 21" stroke="currentColor" stroke-width="1.5"/>
-            </svg>
-            <strong data-es="Foto 2 — Detalle" data-en="Photo 2 — Detail">Foto 2 — Detalle</strong>
-            <span data-es="Unión modular o CFRP" data-en="Modular joint or CFRP">Unión modular o CFRP</span>
-          </div>
+        <div class="photo-frame has-image">
+          <img src="img/prosthesis-2.jpg"
+               alt="Sergio Triviño working on the pediatric prosthesis prototype in the laboratory" />
         </div>
-        <div class="photo-frame">
-          <div class="photo-placeholder">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-              <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="9" cy="9" r="2" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M21 15l-5-5L5 21" stroke="currentColor" stroke-width="1.5"/>
-            </svg>
-            <strong data-es="Foto 3 — Validación" data-en="Photo 3 — Validation">Foto 3 — Validación</strong>
-            <span data-es="Ensayo o usuaria" data-en="Test or user">Ensayo o usuaria</span>
-          </div>
+        <div class="photo-frame has-image">
+          <img src="img/prosthesis-3.jpg"
+               alt="Comparison between conventional prosthetic foot and the 3D-printed modular pediatric prosthesis" />
         </div>
       </div>
 
