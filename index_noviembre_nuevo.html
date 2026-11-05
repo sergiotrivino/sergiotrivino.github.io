@@ -284,6 +284,7 @@ nav.scrolled { border-bottom-color: var(--line-soft); }
 
 .btn .arrow { transition: transform 0.2s; font-size: 1em; }
 .btn:hover .arrow { transform: translate(2px, -2px); }
+.btn:hover .arrow.down { transform: translateY(2px); }
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
@@ -331,7 +332,7 @@ h2 .accent { color: var(--accent); }
 /* ==================== ABOUT ==================== */
 .about-layout {
   display: grid;
-  grid-template-columns: 200px 1.2fr 1fr;
+  grid-template-columns: 100px 1fr 1fr;
   gap: 2rem 3rem;
   align-items: start;
 }
@@ -1389,10 +1390,10 @@ html:not([lang="en"]) .lang-en { display: none; }
 <section class="hero">
   <div class="hero-eyebrow">
     <span class="eyebrow-dot"></span>
-    <span data-es="Disponible para reubicación internacional"
-          data-en="Open to international relocation">Disponible para reubicación internacional</span>
+    <span data-es="Disponible para reubicación internacional y trabajo remoto"
+          data-en="Open to international relocation and remote work">Disponible para reubicación internacional y trabajo remoto</span>
     <span style="color:var(--line)">·</span>
-    <span>Bogotá, CO</span>
+    <span>Zipaquirá, CO</span>
   </div>
 
   <h1>
@@ -1421,10 +1422,10 @@ html:not([lang="en"]) .lang-en { display: none; }
   </div>
 
   <div class="hero-cta">
-    <button type="button" class="btn btn-primary" onclick="openCVModal()">
-      <span data-es="Solicitar CV" data-en="Request CV">Solicitar CV</span>
-      <span class="arrow">→</span>
-    </button>
+    <a href="Sergio_Trivino_Ortega_CV.pdf" download class="btn btn-primary">
+      <span data-es="Descargar CV" data-en="Download CV">Descargar CV</span>
+      <span class="arrow down">↓</span>
+    </a>
     <a href="#work" class="btn btn-ghost">
       <span data-es="Ver trabajo" data-en="View work">Ver trabajo</span>
       <span class="arrow">→</span>
@@ -1615,7 +1616,6 @@ html:not([lang="en"]) .lang-en { display: none; }
             <span class="tag">SolidWorks</span>
             <span class="tag">CAN bus</span>
             <span class="tag">FOC</span>
-            <span class="tag">ROS</span>
             <span class="tag">MATLAB</span>
           </div>
         </div>
@@ -1625,9 +1625,9 @@ html:not([lang="en"]) .lang-en { display: none; }
         <div class="proj-num">02 / 03</div>
         <div class="proj-body">
           <h4 data-es="Documentación de dispositivos médicos" data-en="Medical device documentation">Documentación de dispositivos médicos</h4>
-          <p data-es="Como contratista de investigación, redacto el manual de usuario y la ficha técnica del dispositivo siguiendo las mejores prácticas de documentación de dispositivos médicos, y co-escribo un manuscrito en preparación sobre el diseño de la prótesis modular pediátrica."
-             data-en="As a research contractor, I author the device user manual and technical datasheet following medical device documentation best practices, and co-author a manuscript in preparation on the modular pediatric prosthesis design.">
-            Como contratista de investigación, redacto el manual de usuario y la ficha técnica del dispositivo siguiendo las mejores prácticas de documentación de dispositivos médicos, y co-escribo un manuscrito en preparación sobre el diseño de la prótesis modular pediátrica.
+          <p data-es="Como contratista de investigación, redacto el manual de usuario y la ficha técnica del dispositivo siguiendo las mejores prácticas de documentación de dispositivos médicos, y co-escribo un manuscrito en revisión en una revista científica sobre el diseño de la prótesis modular pediátrica."
+             data-en="As a research contractor, I author the device user manual and technical datasheet following medical device documentation best practices, and co-author a manuscript under journal review on the modular pediatric prosthesis design.">
+            Como contratista de investigación, redacto el manual de usuario y la ficha técnica del dispositivo siguiendo las mejores prácticas de documentación de dispositivos médicos, y co-escribo un manuscrito en revisión en una revista científica sobre el diseño de la prótesis modular pediátrica.
           </p>
         </div>
         <div class="proj-side">
@@ -1683,9 +1683,9 @@ html:not([lang="en"]) .lang-en { display: none; }
         <div class="exp-card">
           <h4 data-es="Contratista de Investigación" data-en="Research Contractor">Contratista de Investigación</h4>
           <span class="exp-org">Escuela Colombiana de Ingeniería Julio Garavito</span>
-          <p data-es="Continuación del proyecto de prótesis transtibial pasiva pediátrica desarrollado durante la tesis de pregrado. Redacción del manual de usuario y ficha técnica; co-autoría de un manuscrito en preparación sobre el diseño modular y escalable, en colaboración con dos investigadores principales."
-             data-en="Continuation of the pediatric passive transtibial prosthesis project developed during my undergraduate thesis. Authoring the user manual and technical datasheet; co-authoring a manuscript in preparation on the modular and scalable design, with two principal investigators.">
-            Continuación del proyecto de prótesis transtibial pasiva pediátrica desarrollado durante la tesis de pregrado. Redacción del manual de usuario y ficha técnica; co-autoría de un manuscrito en preparación sobre el diseño modular y escalable, en colaboración con dos investigadores principales.
+          <p data-es="Continuación del proyecto de prótesis transtibial pasiva pediátrica desarrollado durante la tesis de pregrado. Redacción del manual de usuario y ficha técnica; co-autoría de un manuscrito en revisión en una revista científica sobre el diseño modular y escalable, en colaboración con dos investigadores principales."
+             data-en="Continuation of the pediatric passive transtibial prosthesis project developed during my undergraduate thesis. Authoring the user manual and technical datasheet; co-authoring a manuscript under journal review on the modular and scalable design, with two principal investigators.">
+            Continuación del proyecto de prótesis transtibial pasiva pediátrica desarrollado durante la tesis de pregrado. Redacción del manual de usuario y ficha técnica; co-autoría de un manuscrito en revisión en una revista científica sobre el diseño modular y escalable, en colaboración con dos investigadores principales.
           </p>
         </div>
       </div>
@@ -1845,7 +1845,10 @@ html:not([lang="en"]) .lang-en { display: none; }
       </div>
       <div class="skill-cell">
         <h4 data-es="Robótica y control" data-en="Robotics &amp; control">Robótica y control</h4>
-        <p>ROS, CAN bus, RS485, FOC, PID, <span class="muted">IMU, FSR, encoders, sistemas embebidos</span></p>
+        <p data-es="CAN bus, RS485, FOC, PID, <span class='muted'>IMU, FSR, encoders, sistemas embebidos</span>"
+           data-en="CAN bus, RS485, FOC, PID, <span class='muted'>IMU, FSR, encoders, embedded systems</span>">
+          CAN bus, RS485, FOC, PID, <span class="muted">IMU, FSR, encoders, sistemas embebidos</span>
+        </p>
       </div>
       <div class="skill-cell">
         <h4 data-es="CAD y simulación" data-en="CAD &amp; simulation">CAD y simulación</h4>
@@ -1894,6 +1897,24 @@ html:not([lang="en"]) .lang-en { display: none; }
         <div class="form-item">
           <h4 data-es="B.Sc. Ingeniería Biomédica" data-en="B.Sc. Biomedical Engineering">B.Sc. Ingeniería Biomédica</h4>
           <p>Univ. del Rosario &amp; Esc. Col. Ing. Julio Garavito · MAR 2025</p>
+        </div>
+        <div class="form-item">
+          <h4 data-es="Ponente · Seminario Internacional" data-en="Speaker · International Seminar">Ponente · Seminario Internacional</h4>
+          <p data-es="«Ingeniería Aplicada a la Movilidad: Del pie protésico al exoesqueleto de asistencia»"
+             data-en="“Engineering Applied to Mobility: From Prosthetic Foot to Assistive Exoskeleton”">
+            «Ingeniería Aplicada a la Movilidad: Del pie protésico al exoesqueleto de asistencia»
+          </p>
+          <p data-es="Tecnologías para la Rehabilitación · Esc. Col. Ing. Julio Garavito &amp; Univ. del Rosario · AGO 2026"
+             data-en="Rehabilitation Technologies · Esc. Col. Ing. Julio Garavito &amp; Univ. del Rosario · AUG 2026">
+            Tecnologías para la Rehabilitación · Esc. Col. Ing. Julio Garavito &amp; Univ. del Rosario · AGO 2026
+          </p>
+        </div>
+        <div class="form-item">
+          <h4 data-es="Egresado destacado · Caso de éxito" data-en="Alumni success-story speaker">Egresado destacado · Caso de éxito</h4>
+          <p data-es="Esc. Col. Ing. Julio Garavito · Charla para aspirantes y sus familias · OCT 2026"
+             data-en="Esc. Col. Ing. Julio Garavito · Talk for prospective students and their families · OCT 2026">
+            Esc. Col. Ing. Julio Garavito · Charla para aspirantes y sus familias · OCT 2026
+          </p>
         </div>
         <div class="form-item">
           <h4 data-es="Conferencista invitado" data-en="Invited speaker">Conferencista invitado</h4>
@@ -1959,11 +1980,11 @@ html:not([lang="en"]) .lang-en { display: none; }
       <a href="https://github.com/sergiotrivino" target="_blank" rel="noopener">/sergiotrivino ↗</a>
     </div>
     <div class="contact-cell">
-      <span class="label" data-es="Teléfono" data-en="Phone">Teléfono</span>
-      <a href="tel:+573184352580">+57 318 435 2580</a>
+      <span class="label">CV · PDF</span>
+      <a href="Sergio_Trivino_Ortega_CV.pdf" download data-es="Descargar ↓" data-en="Download ↓">Descargar ↓</a>
     </div>
     <div class="contact-cell">
-      <span class="label">CV</span>
+      <span class="label" data-es="CV por correo" data-en="CV by email">CV por correo</span>
       <button type="button" class="linklike" onclick="openCVModal()" data-es="Solicitar CV ↗" data-en="Request CV ↗">Solicitar CV ↗</button>
     </div>
   </div>
@@ -1971,9 +1992,9 @@ html:not([lang="en"]) .lang-en { display: none; }
 
 <footer>
   <span>© <span id="year"></span> Sergio Triviño Ortega</span>
-  <span data-es="Hecho en Bogotá, Colombia"
-        data-en="Made in Bogotá, Colombia">Hecho en Bogotá, Colombia</span>
-  <button type="button" class="linklike" onclick="openCVModal()" data-es="Solicitar CV →" data-en="Request CV →">Solicitar CV →</button>
+  <span data-es="Hecho en Zipaquirá, Colombia"
+        data-en="Made in Zipaquirá, Colombia">Hecho en Zipaquirá, Colombia</span>
+  <a href="Sergio_Trivino_Ortega_CV.pdf" download data-es="Descargar CV ↓" data-en="Download CV ↓">Descargar CV ↓</a>
 </footer>
 
 <!-- ============ MODAL: SOLICITAR CV ============ -->
